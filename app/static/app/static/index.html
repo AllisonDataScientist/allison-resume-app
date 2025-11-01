@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Allison Snyder · Interactive Résumé</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive résumé web app built by Allison Snyder.">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <h1 class="brand">Allison Snyder</h1>
+    <nav aria-label="Primary" class="nav">
+      <button data-route="home" class="nav-btn" aria-current="page">Home</button>
+      <button data-route="projects" class="nav-btn">Projects</button>
+      <button data-route="skills" class="nav-btn">Skills</button>
+      <button data-route="chat" class="nav-btn">Chat</button>
+      <button data-route="contact" class="nav-btn">Contact</button>
+    </nav>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <!-- Home -->
+    <section id="view-home" class="view is-active" aria-labelledby="home-title">
+      <h2 id="home-title">Profile</h2>
+      <div class="hero">
+        <img src="https://placehold.co/160x160" alt="Allison Snyder headshot" class="avatar">
+        <div class="hero-copy">
+          <p>Decision Scientist. NLP and data apps. Ten years in analytics.</p>
+          <p>Focus: Python, SQL, Snowflake, R, Dataiku, Tableau, ML for text, and RAG.</p>
+          <div class="cta-row">
+            <a href="#projects" class="btn" data-route="projects">See projects</a>
+            <a href="#contact" class="btn btn-secondary" data-route="contact">Get in touch</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="experience">
+        <h3>Experience highlights</h3>
+        <ul class="timeline">
+          <li>
+            <strong>Decision Scientist</strong> · Enterprise insights
+            <span class="time">2022–present</span>
+            <p>Survey modeling, forecasting dashboards, and NLP tools for internal clients.</p>
+          </li>
+          <li>
+            <strong>Senior Analyst</strong>
+            <span class="time">2018–2022</span>
+            <p>Built SQL and Tableau pipelines and automated reports across segments.</p>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <!-- Projects -->
+    <section id="view-projects" class="view" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid" id="projects-grid" role="list"></div>
+    </section>
+
+    <!-- Skills -->
+    <section id="view-skills" class="view" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="skills">
+        <div class="skill-col">
+          <h3>Languages</h3>
+          <ul>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>R</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Data and ML</h3>
+          <ul>
+            <li>Snowflake</li>
+            <li>Dataiku</li>
+            <li>Tableau</li>
+            <li>Scikit-learn</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>NLP and Apps</h3>
+          <ul>
+            <li>Vector search</li>
+            <li>RAG</li>
+            <li>Ollama</li>
+            <li>Streamlit and Flask</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chat placeholder -->
+    <section id="view-chat" class="view" aria-labelledby="chat-title">
+      <h2 id="chat-title">Chat with Allison</h2>
+      <p>This is a placeholder UI for the chatbot. Model hookup comes later.</p>
+      <div class="chat">
+        <div id="chat-log" class="chat-log" aria-live="polite"></div>
+        <form id="chat-form" class="chat-form">
+          <label class="sr-only" for="chat-input">Message</label>
+          <input id="chat-input" name="msg" autocomplete="off" placeholder="Ask about projects, skills, or impact.">
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+      <details class="help">
+        <summary>What will this do later</summary>
+        <ul>
+          <li>RAG over résumé content and project docs</li>
+          <li>Local A/B text prompts for phrasing tests</li>
+          <li>Optional Ollama backend on your machine</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Contact -->
+    <section id="view-contact" class="view" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <ul class="contact">
+        <li>Email: <a href="mailto:Allison.Snyder@outlook.com">Allison.Snyder@outlook.com</a></li>
+        <li>GitHub: <a href="https://github.com/AllisonDataScientist">AllisonDataScientist</a></li>
+        <li>LinkedIn: add later</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>MIT License. © <span id="year"></span> Allison Snyder.</small>
+  </footer>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
